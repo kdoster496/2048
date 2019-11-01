@@ -5,7 +5,7 @@ class Tile:
     def __init__(self, val, w, boxColor, textColor):
         w = int(w)
         self.numDisplay = val
-        assert val % 2 == 0
+        #assert val % 2 == 0
 
         self.surface = pygame.Surface((w, w))
         pygame.draw.rect(self.surface, boxColor, (0, 0, w, w))
@@ -14,6 +14,7 @@ class Tile:
         self.text = self.font.render(str(self.numDisplay), 1, textColor)
         self.text_rect = self.text.get_rect(center=(w / 2, w / 2))
         self.surface.blit(self.text, self.text_rect)
+        self.merged = False
 
 
 
